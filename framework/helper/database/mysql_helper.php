@@ -12,20 +12,29 @@ class mysql_helper {
 
     function select($fields) {
         $this->sql = 'SELECT ';
-        foreach ($fields as $value) {
-            $this->sql .= $value.', ';
-        }
+        if(is_array($fields)){
+            foreach ($fields as $value) {
+                $this->sql .= $value.', ';
+            }
+            
         $this->sql = rtrim($this->sql,", ");
+        }else{
+            $this->sql .='* ';
+        }
         return $this;
     }
 
 
     function from($tables) {
         $this->sql .= ' FROM ';
-        foreach ($tables as $value) {
-            $this->sql .= $value.', ';
+        if(is_array($tables)){
+            foreach ($tables as $value) {
+                $this->sql .= $value.', ';
+            }
+            $this->sql = rtrim($this->sql,", ");
+        }else{
+            $this->sql .=$tables.' ';
         }
-        $this->sql = rtrim($this->sql,", ");
         return $this;
     }
 

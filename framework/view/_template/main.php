@@ -119,8 +119,8 @@ foreach($active_menu as $m){
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="./images/rvc_logo.png" width="60" alt=""> <?php 
-              //print $system['systemName']; 
+              <span class="app-brand-text demo menu-text fw-bold ms-2"><img src="./images/rvc_logo.png" width="60" alt=""> <?php 
+              print $system['systemName']; 
               ?></span>
             </a>
 
@@ -131,7 +131,6 @@ foreach($active_menu as $m){
 
           <div class="menu-inner-shadow"></div>
           <ul class="menu-inner py-1">
-            &nbsp;&nbsp;วิทยาลัยอาชีวศึกษาร้อยเอ็ด
   <?php
     print $menu;
   ?>

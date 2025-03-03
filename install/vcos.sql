@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 29, 2025 at 05:07 PM
+-- Host: 127.0.0.1
+-- Generation Time: Mar 03, 2025 at 08:00 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `oqas`
+-- Database: `vcos`
 --
 
 -- --------------------------------------------------------
@@ -123,7 +123,7 @@ CREATE TABLE `system_config` (
 --
 
 INSERT INTO `system_config` (`id`, `value`) VALUES
-('systemName', 'PLC');
+('systemName', 'SAM');
 
 -- --------------------------------------------------------
 
