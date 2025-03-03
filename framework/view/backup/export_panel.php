@@ -1,0 +1,1 @@
+<a href="<?php print site_url('backup/export_sql'); ?>" target="_blank" class="btn btn-primary">ดาวน์โหลด</a>

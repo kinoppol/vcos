@@ -38,6 +38,21 @@ $menu['จัดการระบบ']=array(
                 'url'=>site_url('config/time'),
             ),*/
         ),
+    ),
+    'backup'=>array(
+        'label'=>'สำรองข้อมูล',
+        'bullet'=>'tf-icons bx bx-id-card',
+        'url'=>site_url('backup'),
+        'item'=>array(
+                'list_user'=>array(
+                'label'=>'ส่งออกข้อมูล',
+                'url'=>site_url('backup/export'),
+            ),
+                'user_type'=>array(
+                'label'=>'นำเข้าข้อมูล',
+                'url'=>site_url('backup/import'),
+            ),
+        ),
     )
 );
 
