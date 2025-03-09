@@ -5,7 +5,9 @@ CREATE TABLE `evidence` (
   `indicator_id` int(11) NOT NULL COMMENT 'รหัสตัวชี้วัด',
   `type` enum('text','link') NOT NULL DEFAULT 'text' COMMENT 'ชนิดหลักฐาน',
   `detail` text NOT NULL COMMENT 'รายละเอียดหลักฐาน',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `indicator_id` (`indicator_id`),
+  CONSTRAINT `evidence_ibfk_1` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -20,7 +22,10 @@ CREATE TABLE `indicator` (
   `title` varchar(1000) NOT NULL COMMENT 'หัวข้อ',
   `subject` text NOT NULL COMMENT 'คำอธิบายหัวข้อ',
   `detail` text DEFAULT NULL COMMENT 'รายละเอียด',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `project_id` (`project_id`),
+  KEY `parent_id` (`parent_id`),
+  CONSTRAINT `indicator_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -61,7 +66,9 @@ CREATE TABLE `project` (
   `subject` varchar(1000) NOT NULL COMMENT 'หัวข้อ',
   `due_date` date NOT NULL DEFAULT current_timestamp(),
   `visible` enum('public','private') NOT NULL DEFAULT 'private' COMMENT 'การเผยแพร่',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `org_id` (`org_id`),
+  CONSTRAINT `project_ibfk_1` FOREIGN KEY (`org_id`) REFERENCES `org` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -117,7 +124,7 @@ CREATE TABLE `user_type` (
 
 
 INSERT INTO user_type VALUES
-("1","developer","qa,oqas,developer,admin,user_menu"),
+("1","developer","qa,oqas,admin,developer,user_menu"),
 ("2","admin","qa,oqas,adminuser_menu"),
 ("3","user","qa,oqas,user_menu");
 

@@ -7,11 +7,14 @@ class config{
         helper('sneat/menu');
         return view('_template/main',array('content'=>$content,'title'=>'ตั้งค่า'));
     }
-    function store(){
-        $data['content']='ตั้งค่าร้าน';
+    function application(){
+        $systemModel = model('system_model');
+        $config_data=$systemModel->get_config();
+        $data['title']='ตั้งค่าระบบ';
+        $data['content']=view('config/setting_form',$config_data);
         return view('_template/main',$data);
     }
-    function time(){
+    function maintenance(){
         $data['content']='ตั้งค่าเวลาการทำงาน.';
         return view('_template/main',$data);
     }

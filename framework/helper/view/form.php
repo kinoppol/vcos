@@ -15,3 +15,38 @@ function form_gen_option($selection, $default_selection){
     }
     return $ret;
 }
+
+function form_gen_input($data=array()){
+        switch($data['type']){
+            case 'text' : return form_gen_input_text($data); break;
+            case 'submit' : return form_gen_input_submit($data); break;
+        }
+   }
+
+function form_gen_input_text($data=array()){
+ $ret='<div class="row">
+                        <div class="mb-3 col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="'.$data['placeholder'].'"
+                                    name="'.$data['name'].'"
+                                    value="'.$data['value'].'" />
+                                <label for="floatingInput">'.$data['label'].'</label>
+                                <div id="floatingInputHelp" class="form-text">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>';   
+    return $ret;
+}
+
+function form_gen_input_submit($data=array()){
+    $ret='<div class="row">
+            <div class="d-grid gap-2 col-lg-6 col-md-12 mx-auto mt-3">
+            </div>
+            <div class="d-grid gap-2 col-lg-6 col-md-12 mx-auto mt-3">
+              <button class="btn btn-primary btn-lg" type="submit">'.$data['value'].'</button>
+            </div>
+          </div>';
+        return $ret;
+}

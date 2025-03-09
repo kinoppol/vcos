@@ -24,7 +24,7 @@ class backup{
         $file=fopen($file_dest,'w');
         fwrite($file,$content);
         fclose($file);
-        //return $content;
+        return 'บันทึกข้อมูลเรียบร้อยแล้วปิดหน้าต่างได้';
     }
     function import(){
 

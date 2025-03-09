@@ -1,6 +1,6 @@
 <?php
 
-$menu['จัดการระบบ']=array(
+$menu['ดูแลระบบ']=array(
     'management'=>array(
         'label'=>'จัดการผู้ใช้',
         'bullet'=>'tf-icons bx bx-group',
@@ -16,15 +16,9 @@ $menu['จัดการระบบ']=array(
             ),
         ),
     ),
-    'cvm_group'=>array(
-        'label'=>'ผู้ใช้ CVM',
-        'bullet'=>'tf-icons bx bx-id-card',
-        'url'=>site_url('cvm/user_cvm'),
-        'item'=>array(),
-    ),
-    'config'=>array(
+    'setting'=>array(
         'label'=>'ตั้งค่าการทำงาน',
-        'url'=>site_url('config'),
+        'url'=>site_url('setting'),
         'bullet'=>'tf-icons bx bx-cog',
         'item'=>array(/*
             'store'=>array(
