@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2025 at 08:00 AM
+-- Generation Time: Mar 16, 2025 at 03:52 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -20,92 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `vcos`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `evidence`
---
-
-CREATE TABLE `evidence` (
-  `id` int(11) NOT NULL COMMENT 'รหัสหลักฐาน',
-  `indicator_id` int(11) NOT NULL COMMENT 'รหัสตัวชี้วัด',
-  `type` enum('text','link') NOT NULL DEFAULT 'text' COMMENT 'ชนิดหลักฐาน',
-  `detail` text NOT NULL COMMENT 'รายละเอียดหลักฐาน'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `indicator`
---
-
-CREATE TABLE `indicator` (
-  `id` int(11) NOT NULL COMMENT 'รหัสตัวชี้วัด',
-  `project_id` int(11) NOT NULL COMMENT 'รหัสการประเมิน',
-  `parent_id` int(11) NOT NULL DEFAULT 0 COMMENT 'ตัวชี้วัดหลัก 0 หมายถึงเป็นตัวชี้วัดสูงสุด',
-  `title` varchar(1000) NOT NULL COMMENT 'หัวข้อ',
-  `subject` text NOT NULL COMMENT 'คำอธิบายหัวข้อ',
-  `detail` text DEFAULT NULL COMMENT 'รายละเอียด'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `indicator`
---
-
-INSERT INTO `indicator` (`id`, `project_id`, `parent_id`, `title`, `subject`, `detail`) VALUES
-(1, 1, 0, 'มาตรฐานที่ 1', 'คุณลักษณะของผู้สําเร็จการศึกษาอาชีวศึกษาที่พึงประสงค์', ''),
-(2, 1, 0, 'มาตรฐานที่ 2', 'การจัดการอาชีวศึกษา', ''),
-(3, 1, 0, 'มาตรฐานที่ 3', 'การสร้างสังคมแห่งการเรียนรู้', ''),
-(4, 1, 1, 'ตัวชี้วัดที่ 1.1', 'ความรู้ของผู้สําเร็จการศึกษาอาชีวศึกษา', ''),
-(5, 1, 1, 'ตัวชี้วัดที่ 1.2', 'ทักษะและการนําไปประยุกต์ใช้ของผู้สําเร็จการศึกษาอาชีวศึกษา', ''),
-(6, 1, 1, 'ตัวชี้วัดที่ 1.3', 'คุณธรรม จริยธรรม และคุณลักษณะที่พึงประสงค์ ของผู้สําเร็จการศึกษาอาชีวศึกษา', NULL),
-(7, 1, 1, 'ตัวชี้วัดที่ 1.4', 'ผลสัมฤทธิ์ ของผู้สําเร็จการศึกษาอาชีวศึกษา', NULL),
-(8, 1, 2, 'ตัวชี้วัดที่ 2.1', 'หลักสูตรอาชีวศึกษา', NULL),
-(9, 1, 2, 'ตัวชี้วัดที่ 2.2', 'การจัดการเรียนการสอนอาชีวศึกษา', NULL),
-(10, 1, 2, 'ตัวชี้วัดที่ 2.3', 'การบริหารจัดการสถานศึกษา', NULL),
-(11, 1, 2, 'ตัวชี้วัดที่ 2.4', 'การนํานโยบายสู่การปฏิบัติ', NULL),
-(12, 1, 3, 'ตัวชี้วัดที่ 3.1', 'ความร่วมมือในการสร้างสังคมแห่งการเรียนรู้', NULL),
-(13, 1, 3, 'ตัวชี้วัดที่ 3.2', 'นวัตกรรม สิ่งประดิษฐ์ งานสร้างสรรค์ และงานวิจัย', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `org`
---
-
-CREATE TABLE `org` (
-  `id` int(11) NOT NULL COMMENT 'รหัสหน่วยงาน',
-  `name` varchar(1000) NOT NULL COMMENT 'ชื่อหน่วยงาน'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `org`
---
-
-INSERT INTO `org` (`id`, `name`) VALUES
-(1, 'วิทยาลัยอาชีวศึกษาร้อยเอ็ด');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `project`
---
-
-CREATE TABLE `project` (
-  `id` int(11) NOT NULL COMMENT 'รหัสการประเมิน',
-  `org_id` int(11) NOT NULL COMMENT 'รหัสหน่วยงาน',
-  `subject` varchar(1000) NOT NULL COMMENT 'หัวข้อ',
-  `due_date` date NOT NULL DEFAULT current_timestamp(),
-  `visible` enum('public','private') NOT NULL DEFAULT 'private' COMMENT 'การเผยแพร่'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project`
---
-
-INSERT INTO `project` (`id`, `org_id`, `subject`, `due_date`, `visible`) VALUES
-(1, 1, 'การประกันคุณภาพภายนอก 2567', '2025-01-30', 'public');
 
 -- --------------------------------------------------------
 
@@ -169,41 +83,13 @@ CREATE TABLE `user_type` (
 --
 
 INSERT INTO `user_type` (`id`, `type_name`, `active_menu`) VALUES
-(1, 'developer', 'qa,oqas,developer,admin,user_menu'),
-(2, 'admin', 'qa,oqas,adminuser_menu'),
-(3, 'user', 'qa,oqas,user_menu');
+(1, 'developer', 'developer,admin,user_menu'),
+(2, 'admin', 'adminuser_menu'),
+(3, 'user', 'user_menu');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `evidence`
---
-ALTER TABLE `evidence`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `indicator_id` (`indicator_id`);
-
---
--- Indexes for table `indicator`
---
-ALTER TABLE `indicator`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `project_id` (`project_id`),
-  ADD KEY `parent_id` (`parent_id`);
-
---
--- Indexes for table `org`
---
-ALTER TABLE `org`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `project`
---
-ALTER TABLE `project`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `org_id` (`org_id`);
 
 --
 -- Indexes for table `system_config`
@@ -230,30 +116,6 @@ ALTER TABLE `user_type`
 --
 
 --
--- AUTO_INCREMENT for table `evidence`
---
-ALTER TABLE `evidence`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสหลักฐาน';
-
---
--- AUTO_INCREMENT for table `indicator`
---
-ALTER TABLE `indicator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสตัวชี้วัด', AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `org`
---
-ALTER TABLE `org`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสหน่วยงาน', AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `project`
---
-ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสการประเมิน', AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
@@ -264,28 +126,6 @@ ALTER TABLE `user_data`
 --
 ALTER TABLE `user_type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `evidence`
---
-ALTER TABLE `evidence`
-  ADD CONSTRAINT `evidence_ibfk_1` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Constraints for table `indicator`
---
-ALTER TABLE `indicator`
-  ADD CONSTRAINT `indicator_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Constraints for table `project`
---
-ALTER TABLE `project`
-  ADD CONSTRAINT `project_ibfk_1` FOREIGN KEY (`org_id`) REFERENCES `org` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
