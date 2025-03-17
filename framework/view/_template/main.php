@@ -120,7 +120,7 @@ foreach($active_menu as $m){
                 </svg>
               </span>
               <span class="app-brand-text demo menu-text fw-bold ms-2"><img src="./images/rvc_logo.png" width="60" alt=""> <?php 
-              print $system['systemName']; 
+              print $system['systemSubName']; 
               ?></span>
             </a>
 
@@ -153,7 +153,9 @@ foreach($active_menu as $m){
             </div>
             
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            การประกันคุณภาพภายนอก พ.ศ.2567 ด้านการอาชีวศึกษาศึกษา
+            <?php 
+              print $system['systemThaiName']; 
+              ?>
               <!-- Search -->
               <!--
               <div class="navbar-nav align-items-center">

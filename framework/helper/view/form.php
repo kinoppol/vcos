@@ -50,3 +50,8 @@ function form_gen_input_submit($data=array()){
           </div>';
         return $ret;
 }
+
+function form_gen_form($data=array()){
+    $ret='<form action="'.$data['action'].'" '.$data['enctype'].' method="post">'.$data['content'].'</form>';
+    return $ret;
+}

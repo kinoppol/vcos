@@ -8,7 +8,9 @@ CREATE TABLE `system_config` (
 
 
 INSERT INTO system_config VALUES
-("systemName","SAM");
+("systemName","Student Activity Management"),
+("systemSubName","SAM"),
+("systemThaiName","ระบบงานกิจกรรมนักเรียนนักศึกษา");
 
 
 
