@@ -4,7 +4,7 @@
                   <div class="card-body">
                       <a href="<?= site_url('management/add_user_form') ?>"
                           class="btn btn-primary">
-                          เพิ่มประเภทผู้ใช้งาน
+                          เพิ่มผู้ใช้งาน
                       </a>
                   </div>
                   <div class="table-responsive text-nowrap">
