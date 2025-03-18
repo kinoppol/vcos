@@ -1,8 +1,8 @@
 <?php
 class module{
-    function index($param=''){
-
-        $content=$param['mod'];
-        return view('_template/main',array('content'=>$content,'title'=>'โมดูล'));
+    function exec($param=''){
+        helper('module');
+        $mod_result=module_run($param);
+        return view('_template/main',array('content'=>$mod_result['content'],'title'=>$mod_result['title']));
     }
 }

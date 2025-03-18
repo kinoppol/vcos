@@ -89,3 +89,5 @@ function set_val($val=false,$def=''){
     if($val) return $val;
     else return $def;
 }*/
+
+include_once('function_module.php');
