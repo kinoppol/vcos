@@ -43,13 +43,14 @@ CREATE TABLE `user_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_name` varchar(32) NOT NULL,
   `active_menu` text NOT NULL,
+  `active_module` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 INSERT INTO user_type VALUES
-("1","developer","developer,admin,user_menu"),
-("2","admin","adminuser_menu"),
-("3","user","user_menu");
+("1","developer","developer,admin,user_menu","hello,sam"),
+("2","admin","adminuser_menu",""),
+("3","user","user_menu","");
 
 
