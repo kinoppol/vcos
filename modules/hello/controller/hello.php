@@ -1,6 +1,9 @@
 <?php
-class module{
+class hello{
   function index(){
-    return module_view('home/welcome');
+    global $module;
+    $ret['content'] = $module->view('home/welcome');
+    $ret['title'] = 'สวัสดี';
+    return $ret;
   }
 }

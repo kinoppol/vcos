@@ -9,6 +9,10 @@ class package_manager{
         $content=view('package_manager/online_install');
         return view('_template/main',array('content'=>$content,'title'=>'จัดการแพ็คเกจ'));
     }
+    function upload_install(){      
+        $content=view('package_manager/upload_install');
+        return view('_template/main',array('content'=>$content,'title'=>'จัดการแพ็คเกจ'));
+    }
     function export_cloud_sql(){
         global $db;
         helper('database/export_db');

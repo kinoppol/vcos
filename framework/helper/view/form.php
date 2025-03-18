@@ -20,6 +20,7 @@ function form_gen_input($data=array()){
         switch($data['type']){
             case 'text' : return form_gen_input_text($data); break;
             case 'submit' : return form_gen_input_submit($data); break;
+            case 'file' : return form_gen_input_file($data); break;
         }
    }
 
@@ -39,6 +40,24 @@ function form_gen_input_text($data=array()){
                     </div>';   
     return $ret;
 }
+
+function form_gen_input_file($data=array()){
+    $ret='<div class="row">
+                           <div class="mb-3 col-12">
+                               <div class="input-group">
+                               
+            <label class="input-group-text" for="inputGroupFile01">'.$data['label'].'</label>
+                                   <input type="file" class="form-control" id="floatingInput" placeholder="'.$data['placeholder'].'"
+                                       name="'.$data['name'].'"
+                                       value="'.$data['value'].'" />
+                                   <div id="floatingInputHelp" class="form-text">
+   
+                                   </div>
+                               </div>
+                           </div>
+                       </div>';   
+       return $ret;
+   }
 
 function form_gen_input_submit($data=array()){
     $ret='<div class="row">
