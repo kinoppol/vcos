@@ -47,7 +47,7 @@ function form_gen_input_file($data=array()){
                                <div class="input-group">
                                
             <label class="input-group-text" for="inputGroupFile01">'.$data['label'].'</label>
-                                   <input type="file" class="form-control" id="floatingInput" placeholder="'.$data['placeholder'].'"
+                                   <input type="file" class="form-control" id="inputGroupFile01" placeholder="'.$data['placeholder'].'"
                                        name="'.$data['name'].'"
                                        value="'.$data['value'].'" />
                                    <div id="floatingInputHelp" class="form-text">
