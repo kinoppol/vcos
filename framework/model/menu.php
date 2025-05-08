@@ -20,4 +20,19 @@ class menu{
             return $menu;
         
     }
+    function get_user_module($data=array()){
+       
+        $sql='select * from user_type';
+        if(count($data)){
+          $sql.=' where '.arr2and($data);
+        }
+        //print $sql;
+        $result=$this->db->query($sql);
+
+            $res=array();
+            $data=$result->fetch_assoc();
+                $menu=explode(',',$data['active_module']);
+            return $menu;
+        
+    }
 }

@@ -63,7 +63,7 @@ $system=$systemModel->get_config();
                     <!-- /Logo -->
                     <h4 class="mb-2">ยินดีต้อนรับเข้าสู่ <?php 
               //print_r($system);
-              print $system['systemName']; ?>👋</h4>
+              print $system['systemSubName']; ?>👋</h4>
 
                     <?php
                 if(empty($_SESSION['err_message'])){

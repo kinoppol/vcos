@@ -18,4 +18,14 @@ class config{
         $data['content']='ตั้งค่าเวลาการทำงาน.';
         return view('_template/main',$data);
     }
+
+    function save_config(){
+        $systemModel = model('system_model');
+        //print_r($_POST);
+        foreach($_POST as $id=>$value){
+            //print 'UC';
+            $systemModel->update_config_if_empty_create($id,$value);
+        }
+        return redirect(site_url('config/application'));
+    }
 }

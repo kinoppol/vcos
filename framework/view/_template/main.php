@@ -3,8 +3,14 @@ helper('sneat/menu');
 $systemModel=model('system');
 $menuModel=model('menu');
 $system=$systemModel->get_config();
+$active_module=$menuModel->get_user_module(['id'=>$_SESSION['user']['user_type_id']]);
 $active_menu=$menuModel->get_user_menu(['id'=>$_SESSION['user']['user_type_id']]);
 $menu='';
+
+foreach($active_module as $m){
+  $menu.=module_menu($m.'/menu/'.trim($m));
+}
+
 foreach($active_menu as $m){
   $menu.=view('_menu/'.trim($m));
 }
@@ -120,7 +126,7 @@ foreach($active_menu as $m){
                 </svg>
               </span>
               <span class="app-brand-text demo menu-text fw-bold ms-2"><img src="./images/rvc_logo.png" width="60" alt=""> <?php 
-              print $system['systemName']; 
+              print $system['systemSubName']; 
               ?></span>
             </a>
 
@@ -153,7 +159,9 @@ foreach($active_menu as $m){
             </div>
             
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            การประกันคุณภาพภายนอก พ.ศ.2567 ด้านการอาชีวศึกษาศึกษา
+            <?php 
+              print $system['systemThaiName']; 
+              ?>
               <!-- Search -->
               <!--
               <div class="navbar-nav align-items-center">

@@ -2,17 +2,21 @@
 
 $menu['จัดการระบบ']=array(
     'package_manager'=>array(
-        'label'=>'จัดการเพ็คเกจ',
+        'label'=>'จัดการแพ็คเกจ',
         'bullet'=>'tf-icons bx bx-box',
         'url'=>site_url('package_manager'),
         'item'=>array(
                 'list'=>array(
-                'label'=>'ติดตั้งจากอินเทอร์เน็ต',
-                'url'=>site_url('package_manager/internet'),
+                'label'=>'แพ็คเกจที่ติดตั้งแล้ว',
+                'url'=>site_url('package_manager/installed_modules'),
             ),
-                'draft'=>array(
+                'online'=>array(
+                'label'=>'ติดตั้งจากอินเทอร์เน็ต',
+                'url'=>site_url('package_manager/online_install'),
+            ),
+                'upload'=>array(
                 'label'=>'ติดตั้งจากไฟล์ในเครื่อง',
-                'url'=>site_url('package_manager/upload'),
+                'url'=>site_url('package_manager/upload_install'),
             ),
         ),
     ),

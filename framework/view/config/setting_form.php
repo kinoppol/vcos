@@ -15,16 +15,16 @@ $form['inputs']=array(
         'type'=>'text',
         'required'=>true,
         'placeholder'=>'ระบบบริหารจัดการ...',
-        'name'=>'thaiSystemName',
+        'name'=>'systemThaiName',
         'label'=>'ชื่อระบบ(ภาษาไทย)',
-        'value'=>$thaiSystemName,
+        'value'=>$systemThaiName,
     ),array(
         'type'=>'text',
         'required'=>false,
         'placeholder'=>'MS...',
-        'name'=>'subSystemName',
+        'name'=>'systemSubName',
         'label'=>'ชื่อย่อระบบ',
-        'value'=>$subSystemName,
+        'value'=>$systemSubName,
     ),array(
         'type'=>'submit',
         'value'=>'บันทึก',
@@ -32,9 +32,9 @@ $form['inputs']=array(
 );
 
 foreach($form['inputs'] as $input){
-    $data['content'].=form_gen_input($input);    
+    $data['content'].=form_gen_input($input);   
 }
-
+$data['content']=form_gen_form(['content'=>$data['content'],'action'=>site_url('config/save_config')]);    
 
 $data['title']='ข้อมูลระบบ';
 //$data['content']=form_gen_input_text($form['input_text']);
