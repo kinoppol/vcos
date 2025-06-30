@@ -1,7 +1,7 @@
 <?php
 
 helper('view/alert');
-
+//print_r($user_type);
 ?>
 
 <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
@@ -94,7 +94,18 @@ helper('view/alert');
 
                     <?php $count++;
                     } ?>
+                    <div class="mb-3 col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="active_module"
+                                aria-describedby="floatingInputHelp" name="active_module"
+                                value="<?= $user_type['active_module'] ?>"
+                                 />
+                            <label for="floatingInput">โมดูลที่ใช้งานได้</label>
+                            <div id="floatingInputHelp" class="form-text">
 
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="d-grid gap-2 col-lg-6 col-md-12 mx-auto mt-3">
                         </div>

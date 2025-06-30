@@ -26,9 +26,9 @@ class dummy_model
             $this->helper->where([$this->primary_key => $id]);
         }
         $result = $this->helper->query_at($this->db);
-        if($result->num_rows  == 1){
+        /*if($result->num_rows  == 1){
             return $result->fetch_assoc();
-        }
+        }*/
         while($row = $result->fetch_assoc()){
             $ret[$row[$this->primary_key]] = $row;
         }

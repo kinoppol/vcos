@@ -1,8 +1,6 @@
 <?php
 helper('sneat/menu');
-$systemModel=model('system');
 $menuModel=model('menu');
-$system=$systemModel->get_config();
 $active_module=$menuModel->get_user_module(['id'=>$_SESSION['user']['user_type_id']]);
 $active_menu=$menuModel->get_user_menu(['id'=>$_SESSION['user']['user_type_id']]);
 $menu='';
@@ -31,7 +29,7 @@ foreach($active_menu as $m){
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title><?php print $system['systemName']; ?> : <?php print $title; ?></title>
+    <title><?php print $title; ?></title>
 
     <meta name="description" content="" />
 

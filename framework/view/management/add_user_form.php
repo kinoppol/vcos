@@ -16,7 +16,7 @@ helper('view/alert');
         }
 ?>
         <form
-          action="<?= site_url('management/edit_user') ?>"
+          action="<?= site_url('management/add_user') ?>"
           method="post" enctype="multipart/form-data">
           <h5>รูปภาพประจำตัว</h5>
           <div class="mb-3">

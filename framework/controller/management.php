@@ -118,23 +118,36 @@ class management{
         ];
 
         $user_id = $model->add_user($data);
-        if(!int($user_id))
+        if(!is_numeric($user_id))
         {
             $_SESSION['response']['alert']['message'] = 'เกิดช้อผิดพลาดบนเซิฟเวอร์ กรุณาลองใหม่อีกครั้งในภายหลัง';
-            //return redirect(site_url('management/add_user_form'));
+            return redirect(site_url('management/add_user_form'));
         }
 
         
         if($_FILES["fileToUpload"]['size'] > 0){
             if(!$model->update_avatar($user_id,$_FILES["fileToUpload"])){
                 $_SESSION['response']['alert']['message'] = $model->error();
-                //eturn redirect(site_url('management/edit_user_form/id/'.$user_id));
+                return redirect(site_url('management/edit_user_form/id/'.$user_id));
             }
         }
         
         $_SESSION['response']['alert']['type'] = 'success';
         $_SESSION['response']['alert']['message'] = 'บันทึกข้อมูลเสร็จสิ้น!';
-        //return redirect(site_url('management/edit_user_form/id/'.$user_id));
+        return redirect(site_url('management/edit_user_form/id/'.$user_id));
+    }
+
+    
+    function delete_user($param){
+        $model = model('user_model');
+
+
+        $model->delete_user($param['id']);
+
+        $_SESSION['response']['alert']['type'] = 'success';
+        $_SESSION['response']['alert']['message'] = 'ผู้ใช้งานเสร็จสิ้น!';
+        
+        return redirect(site_url('management/list_user/'));
     }
 
 
@@ -187,10 +200,14 @@ class management{
         $is_updated = false;
         $userTypeModel=model('user_type_model');
         $user_type_data = $userTypeModel->get($param['id']);
-
+        
         if($_POST['type_name'] != $user_type_data['type_name']){
             $is_updated = true;
             $user_type_data['type_name'] = $_POST['type_name'];
+        }
+        if($_POST['active_module'] != $user_type_data['active_module']){
+            $is_updated = true;
+            $user_type_data['active_module']=$_POST['active_module'];
         }
         for($i=0;$i<count($user_type_data['active_menu']);$i++)
         {

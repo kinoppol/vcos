@@ -119,6 +119,7 @@ class user_model extends dummy_model{
             
 
     }
+
     function update_user($id=null,$data=null){
 
         $data_struct = [
@@ -183,6 +184,13 @@ class user_model extends dummy_model{
         }
 
         return true;
+
+    }
+
+    function delete_user($user_id){ 
+        $sql='delete from user_data where id = '.$user_id;
+        $result=$this->db->query($sql);
+        return $this->db->insert_id;
 
     }
 }

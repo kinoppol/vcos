@@ -5,6 +5,7 @@ function pq($str,$force_q=false){
     return "'".$str."'";
 }*/
 function view($file,$arr=array()){
+    global $system;
     ob_start();
         extract($arr);
         $inc_file='view/'.$file.'.php';

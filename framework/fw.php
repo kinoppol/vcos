@@ -3,6 +3,7 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 require_once('function.php');
+$system='';
 
 function redirect_on_error(){
     $debug_mode=true;
@@ -23,9 +24,11 @@ register_shutdown_function('redirect_on_error');
 
 ob_start();
 session_start();
-
     
     function fw_run($controller_path,$function='',$param=array()){
+        global $system;
+        $systemModel=model('system');
+        $system=$systemModel->get_config();
 
     $inc_file='controller/'.$controller_path.'.php';
     

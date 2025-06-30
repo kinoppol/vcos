@@ -14,15 +14,17 @@ class user_type_model extends dummy_model {
 
     function get($id=null) {
         $user_types = parent::get($id);
-
+        
         if(empty($id)) {
             foreach ($user_types as $key => $user_type_data) {
                 $user_types[$key]['active_menu'] = explode(',',$user_type_data['active_menu']);
+                $user_types[$key]['active_module'] = explode(',',$user_type_data['active_module']);
             }
             return $user_types;
         }
-
+        $user_types=$user_types[$id];
         $user_types['active_menu'] = explode(',',$user_types['active_menu']);
+        $user_types['active_module'] = $user_types['active_module'];
         return $user_types;
     }
 
@@ -43,6 +45,7 @@ class user_type_model extends dummy_model {
     function update($id,$data) {
         $data['active_menu'] = join(',',array_filter($data['active_menu']));
         $data['active_menu'] = trim($data['active_menu'],',');
+        $data['active_module'] = trim($data['active_module']);
         if(!parent::update($id,$data)){
             $this->error = 'เกิดข้อผิดพลาดบนเซิฟเวอร์ กรุณาลองใหม่อีกครั้งในภายหลัง';
             return false;

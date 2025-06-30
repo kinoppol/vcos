@@ -2,13 +2,13 @@
 $db_host='localhost';
 $db_user='root';
 $db_pass='';
-$db_database='vcos';
+$db_database='ocd';
 
 $db = new mysqli($db_host,$db_user,$db_pass,$db_database);
 
 if($db->connect_errno){
     //print "ไม่สามารถเชื่อมต่อฐานข้อมูลได้`";
-    print view('_error/errordb');
+    //print view('_error/errordb');
     //exit();
 }
 $db-> set_charset("utf8mb4");

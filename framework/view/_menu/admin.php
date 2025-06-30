@@ -16,7 +16,7 @@ $menu['ดูแลระบบ']=array(
             ),
         ),
     ),
-    'setting'=>array(
+    /*'setting'=>array(
         'label'=>'ตั้งค่าการทำงาน',
         'url'=>site_url('setting'),
         'bullet'=>'tf-icons bx bx-cog',
@@ -30,9 +30,9 @@ $menu['ดูแลระบบ']=array(
                 'label'=>'เวลาทำการ',
                 'bullet'=>'fa fa-clock-o',
                 'url'=>site_url('config/time'),
-            ),*/
+            ),
         ),
-    ),
+    ),*/
     'backup'=>array(
         'label'=>'สำรองข้อมูล',
         'bullet'=>'tf-icons bx bx-id-card',
