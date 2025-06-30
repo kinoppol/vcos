@@ -1,8 +1,9 @@
 <?php
-$db_host='localhost';
-$db_user='root';
-$db_pass='';
-$db_database='ocd';
+// $db_host='localhost';
+// $db_user='root';
+// $db_pass='';
+// $db_database='vcos';
+require_once("../../vcos_setup.php");
 
 $db = new mysqli($db_host,$db_user,$db_pass,$db_database);
 
