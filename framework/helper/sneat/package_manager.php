@@ -32,8 +32,8 @@ class package_manager{
     function update(){
         $update_data=array(
             'url'=>'https://vcos.edsup.org/package/modules/vcos_module_rms-main.zip',
-            'zip_dir'=>'vcos_module_rms-main/',
-            'package_dir'=>'modules/rms/',
+            'zip_dir'=>'vcos_module_rms-main',
+            'package_dir'=>'rms',
         );
 
         helper('package/update');
