@@ -12,6 +12,7 @@ foreach($active_module as $m){
 foreach($active_menu as $m){
   $menu.=view('_menu/'.trim($m));
 }
+$page_script='';
 ?><!DOCTYPE html>
 
 <html
@@ -302,7 +303,9 @@ foreach($active_menu as $m){
     <script src="<?php print site_url('template/Sneat/sneat-bootstrap-html-admin-template/',true); ?>assets/js/main.js"></script>
 
     <!-- Page JS -->
-
+        <?php
+          print $page_script;
+        ?>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
