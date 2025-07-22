@@ -17,6 +17,11 @@ function module_url($mod,$met){
   return $res;
 }
 
+function module_api($mod,$met){
+  $res=site_url('module/api/mod/'.$mod.'/met/'.$met);
+  return $res;
+}
+
 function module_menu($file){
   $file='modules/'.$file.'.php';
   $res='';
