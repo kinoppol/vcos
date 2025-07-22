@@ -2,10 +2,11 @@
 function xTimeAgo ($oldTime, $newTime) {
 $timeCalc = strtotime($newTime) - strtotime($oldTime);
 
-if ($timeCalc > (60*60*24)) {$timeCalc = round($timeCalc/60/60/24) . " days ago";}
-else if ($timeCalc > (60*60)) {$timeCalc = round($timeCalc/60/60) . " hours ago";}
-else if ($timeCalc > 60) {$timeCalc = round($timeCalc/60) . " minutes ago";}
-else if ($timeCalc > 0) {$timeCalc .= " seconds ago";}
+if ($timeCalc > (60*60*24)) {$timeCalc = round($timeCalc/60/60/24) . " วันที่ผ่านมา";}
+else if ($timeCalc > (60*60)) {$timeCalc = round($timeCalc/60/60) . " ชั่วโมงที่ผ่านมา";}
+else if ($timeCalc > 60) {$timeCalc = round($timeCalc/60) . " นาทีที่ผ่านมา";}
+else if ($timeCalc > 0) {$timeCalc .= " วินาทีที่ผ่านมา";}
+else {$timeCalc = " ตอนนี้";}
 
 return $timeCalc;
 }
