@@ -27,6 +27,7 @@ class login{
                 //'store_id'=>$store_id,
                 'username'=>$username,
                 'password'=>md5($password),
+                'active'=>1,
             );
             $u1=$user->get_user($data);
 
@@ -34,6 +35,7 @@ class login{
                 //'store_id'=>$store_id,
                 'email'=>$username,
                 'password'=>md5($password),
+                'active'=>1,
             );
             $u2=$user->get_user($data);
             $u=$u1;

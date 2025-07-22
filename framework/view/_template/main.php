@@ -13,6 +13,7 @@ foreach($active_menu as $m){
   $menu.=view('_menu/'.trim($m));
 }
 //$page_script='';
+$user_pic=mb_substr($_SESSION['user']['picture'],0,4)=='http'?$_SESSION['user']['picture']:'./writable/images/profile/'.$_SESSION['user']['picture'];
 ?><!DOCTYPE html>
 
 <html
@@ -195,7 +196,7 @@ foreach($active_menu as $m){
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="./writable/images/profile/<?= $_SESSION['user']['picture'] ?>" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="<?= $user_pic ?>" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -204,7 +205,7 @@ foreach($active_menu as $m){
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="./writable/images/profile/<?= $_SESSION['user']['picture'] ?>" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="<?= $user_pic ?>" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
