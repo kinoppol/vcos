@@ -1,6 +1,6 @@
 <?php
 function xTimeAgo ($oldTime, $newTime) {
-$timeCalc = strtotime($newTime) – strtotime($oldTime);
+$timeCalc = strtotime($newTime) - strtotime($oldTime);
 
 if ($timeCalc > (60*60*24)) {$timeCalc = round($timeCalc/60/60/24) . ” days ago”;}
 else if ($timeCalc > (60*60)) {$timeCalc = round($timeCalc/60/60) . ” hours ago”;}
