@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2025 at 03:15 PM
+-- Generation Time: Jul 22, 2025 at 01:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rms_sync_record`
+--
+
+CREATE TABLE `rms_sync_record` (
+  `id` int(11) NOT NULL,
+  `sync_name` varchar(100) NOT NULL,
+  `sync_time` datetime NOT NULL,
+  `result` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rms_sync_record`
+--
+
+INSERT INTO `rms_sync_record` (`id`, `sync_name`, `sync_time`, `result`) VALUES
+(1, 'personal', '2025-07-22 14:50:20', 'ok'),
+(2, 'personal', '2025-07-22 14:50:42', 'ok');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `system_config`
 --
 
@@ -37,6 +58,7 @@ CREATE TABLE `system_config` (
 --
 
 INSERT INTO `system_config` (`id`, `value`) VALUES
+('rms_url', 'https://rms.rvc.ac.th'),
 ('systemName', 'Vocational college OS'),
 ('systemSubName', 'VCOS'),
 ('systemThaiName', 'ระบบจัดการเว็บไซต์สำหรับอาชีวศึกษา');
@@ -64,9 +86,7 @@ CREATE TABLE `user_data` (
 --
 
 INSERT INTO `user_data` (`id`, `username`, `password`, `email`, `name`, `surname`, `user_type_id`, `picture`, `active`) VALUES
-(1, 'dev', '81dc9bdb52d04dc20036dbd8313ed055', 'noppol.ins@gmail.com', 'นพพล', 'อินศร', 1, 'ZGV2.jpg', '1'),
-(2, 'it', '81dc9bdb52d04dc20036dbd8313ed055', 'it@rvc.ac.th', 'งานศูนย์ข้อมูลสารสนเทศ', 'วิทยาลัยอาชีวศึกษาร้อยเอ็ด', 2, NULL, '1'),
-(3, 'noppol', '8689391a8b93cd2d55ccf3f436eef4e2', 'noppol@rvc.ac.th', '', '', 2, NULL, '1');
+(1, 'dev', '81dc9bdb52d04dc20036dbd8313ed055', 'noppol.ins@gmail.com', 'นพพล', 'อินศร', 1, 'ZGV2.jpg', '1');
 
 -- --------------------------------------------------------
 
@@ -86,13 +106,19 @@ CREATE TABLE `user_type` (
 --
 
 INSERT INTO `user_type` (`id`, `type_name`, `active_menu`, `active_module`) VALUES
-(1, 'developer', 'qa,oqas,developer,admin,user_menu', 'rms,ocd'),
+(1, 'developer', 'qa,oqas,developer,admin,user_menu', 'ocd,rms'),
 (2, 'admin', 'qa,oqas,adminuser_menu', ''),
 (3, 'user', 'qa,oqas,user_menu', '');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `rms_sync_record`
+--
+ALTER TABLE `rms_sync_record`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `system_config`
@@ -117,6 +143,12 @@ ALTER TABLE `user_type`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `rms_sync_record`
+--
+ALTER TABLE `rms_sync_record`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_data`
