@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 date_default_timezone_set('Asia/Bangkok');
 require_once('framework/fw.php');
 require_once('conf/db.php');
-$page_script='';
 define('BASE_PATH', str_replace('\\','/',dirname(__FILE__)).'/');
 
 $controller_guest_allowed=array(
