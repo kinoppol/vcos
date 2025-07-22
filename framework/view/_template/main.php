@@ -12,7 +12,7 @@ foreach($active_module as $m){
 foreach($active_menu as $m){
   $menu.=view('_menu/'.trim($m));
 }
-$page_script='';
+//$page_script='';
 ?><!DOCTYPE html>
 
 <html
