@@ -105,12 +105,12 @@ $system=$systemModel->get_config();
                         </div>
                     </form>
 
-                    <p class="text-center">
+                    <!-- <p class="text-center">
                         <span>หากคุณยังไม่ลงทะเบียนผู้ใช้</span>
                         <a href="<?php print site_url('register'); ?>">
                             <span>คลิกเพื่อลงทะเบียน</span>
                         </a>
-                    </p>
+                    </p> -->
                 </div>
             </div>
             <!-- /Register -->
