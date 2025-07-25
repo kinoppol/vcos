@@ -1,9 +1,9 @@
 <?php
 function module_run($param=''){
-  require_once('modules/'.$param['mod'].'/controller/'.$param['mod'].'.php');
-  $module_obj = new $param['mod']();
+  require_once('modules/'.$param['mod'].'/controller/'.$param['con'].'.php');
+  $module_obj = new $param['con']();
   global $module;
-  $module = new module_class($param['mod']);
+  $module = new module_class($param['mod'],$param['con']);
 
   if(empty($param['met'])){
     return $module_obj->index(); 
@@ -12,13 +12,13 @@ function module_run($param=''){
   }
 }
 
-function module_url($mod,$met){
-  $res=site_url('module/exec/mod/'.$mod.'/met/'.$met);
+function module_url($mod,$con,$met){
+  $res=site_url('module/exec/mod/'.$mod.'/con/'.$con.'/met/'.$met);
   return $res;
 }
 
-function module_api($mod,$met){
-  $res=site_url('module/api/mod/'.$mod.'/met/'.$met);
+function module_api($mod,$con,$met){
+  $res=site_url('module/api/mod/'.$mod.'/con/'.$con.'/met/'.$met);
   return $res;
 }
 
@@ -36,9 +36,9 @@ function module_menu($file){
 
 class module_class{
   private $name;
-  function __construct($str){
-    $this->name=$str;
-    require_once('modules/'.$this->name.'/controller/'.$this->name.'.php');
+  function __construct($mod,$con){
+    $this->name=$mod;
+    require_once('modules/'.$mod.'/controller/'.$con.'.php');
   }
 
   function view($file,$arr=array()){
@@ -62,5 +62,8 @@ class module_class{
     require_once('modules/'.$this->name.'/helper/'.$file.'.php');
   }
 
+  function url($con,$met=''){
+    return site_url($this->name,$con,$met);
+  }
   
 }
