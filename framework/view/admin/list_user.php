@@ -22,6 +22,9 @@
                           <tbody class="table-border-bottom-0">
                               <?php
                                 foreach($userdata as $user) {
+                                    if($user['user_type_id']<=1){
+                                        continue;
+                                    }
                                     ?>
                               <tr>
                                   <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
