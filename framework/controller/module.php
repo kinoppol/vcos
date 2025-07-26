@@ -9,6 +9,6 @@ class module{
      function api($param=''){
         //helper('module');
         $mod_result=module_run($param);
-        return $mod_result['content'];
+        //return $mod_result['content'];
     }
 }

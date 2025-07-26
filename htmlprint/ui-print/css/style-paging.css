@@ -1,0 +1,423 @@
+.box-paging {
+	background: #eeeeee;
+	padding: 5px;
+}
+
+h1.navHeader {
+	cursor: pointer;
+}
+
+/*** sample table to demonstrate CSS3 formatting ***/
+table.formatPaging {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0px;
+	text-align: left;
+	color: #606060;
+	background: #FFFFFF;
+	font-size: 12px;
+}
+
+/*** table's thead section, coulmns header style ***/
+table.formatPaging thead {
+	background-color: #6f7e95;
+}
+
+table.formatPaging thead tr th {
+	font-family: DbAdmanX;
+	font-size: 18px;
+	padding: 4px 5px;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+table.formatPaging thead tr th.l {
+	text-align: left;
+}
+
+table.formatPaging thead tr th.c {
+	text-align: center;
+}
+
+table.formatPaging thead tr th.r {
+	text-align: right;
+}
+
+table.formatPaging thead tr th[data-sort] {
+	cursor: pointer;
+}
+
+/* table.formatPaging thead tr th:first-child {
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+table.formatPaging thead tr th:last-child {
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 5px 5px 0px;
+}
+
+table.formatPaging thead tr th.no-radius:first-child {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+table.formatPaging thead tr th.no-radius:last-child {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+} */
+
+/*** table's tbody section, odd rows style ***/
+table.formatPaging tbody tr:nth-child(odd) {
+	background-color: #fdfdfd; /* #f9f9f9 */
+}
+
+/*** hover effect to table's tbody odd rows ***/
+table.formatPaging tbody tr:nth-child(odd):hover {
+	background-color: #dfebf9;
+}
+
+table.formatPaging tbody.no-hover tr:nth-child(odd):hover {
+	background-color: #fdfdfd;
+}
+
+/*** table's tbody section, even rows style ***/
+table.formatPaging tbody tr:nth-child(even) {
+	background-color: #f8f8f8; /* #efefef */
+}
+
+/*** hover effect to apply to table's tbody section, even rows ***/
+table.formatPaging tbody tr:nth-child(even):hover {
+	background-color: #dfebf9;
+}
+
+table.formatPaging tbody.no-hover tr:nth-child(even):hover {
+	background-color: #f8f8f8;
+}
+
+table.formatPaging tbody tr.click-active {
+	background-color: #dfebf9;
+}
+
+table.formatPaging tbody tr.row-select {
+	background: #d3ec8c;
+}
+
+/*** table's td element, all section ***/
+table.formatPaging tbody tr td {
+	vertical-align: middle;
+	padding: 0.5em;
+}
+
+table.formatPaging tbody tr td.tpointer {
+	cursor: pointer;
+}
+
+table.formatPaging tbody tr td.thover:hover {
+	cursor: pointer;
+	background: #d3ec8c;
+}
+
+table.formatPaging tbody tr td.group-header {
+	padding: 0.3em;
+	background-color: #e3e3e3;
+	/* text-align: left; */
+}
+
+table.formatPaging tbody tr td.group-header.center {
+	text-align: center;
+}
+
+/* rounded corners first child td element */
+/* table.formatPaging tbody td:first-child {
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+rounded corners last child td element
+table.formatPaging tbody td:last-child {
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 5px 5px 0px;
+} */
+
+table.formatPaging td:last-child.no-result {
+	font-style: italic;
+	color: #bababa;
+	padding-left: 5px;
+	/* -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; */
+}
+
+table.formatPaging tbody tr.line-through {
+	text-decoration: line-through;
+	color: #cccccc;
+}
+
+table.formatPaging tbody tr.line-through a {
+	text-decoration: line-through;
+	color: #cccccc;
+}
+
+table.formatPaging tbody td.vtop {
+	vertical-align: top;
+}
+
+table.formatPaging tbody td div.box-detail {
+	padding: 2px 0px;
+}
+
+/*** PageNavigation ***/
+/*** header ***/
+table.formatPaging thead.pageNavigation {
+	color: #808080;
+}
+
+table.formatPaging thead.pageNavigation a {
+	color: #808080;
+	text-decoration: none;
+}
+
+table.formatPaging thead.pageNavigation a:link {
+	color: #808080;
+	text-decoration: none;
+}
+
+table.formatPaging thead.pageNavigation a:visited {
+	color: #808080;
+	text-decoration: none;
+}
+
+table.formatPaging thead.pageNavigation span.tleft {
+	display: inline-block;
+	width: 49.75%;
+	text-align: left;
+}
+
+table.formatPaging thead.pageNavigation span.tright {
+	display: inline-block;
+	width: 49.75%;
+	text-align: right;
+}
+
+table.formatPaging thead.pageNavigation select {
+	font-size: 1em;
+}
+
+/*** footer ***/
+table.formatPaging tfoot {
+	color: #808080;
+}
+
+table.formatPaging tfoot a {
+	color: #808080;
+	text-decoration: none;
+}
+
+table.formatPaging tfoot a:link {
+	color: #808080;
+	text-decoration: none;
+}
+
+table.formatPaging tfoot a:visited {
+	color: #808080;
+	text-decoration: none;
+}
+
+table.formatPaging tfoot span.tleft {
+	display: inline-block;
+	width: 49.75%;
+	text-align: left;
+}
+
+table.formatPaging tfoot span.tright {
+	display: inline-block;
+	width: 49.75%;
+	text-align: right;
+}
+
+table.formatPaging tfoot select {
+	font-size: 1em;
+}
+
+.paging-disabled {
+	opacity: 0.5;
+}
+
+.sort-msg {
+	position: absolute;
+	top: 0;
+	left: 49.5%;
+	margin: 0;
+	background: #ff6600;
+	color: #FFFFFF;
+	padding: 1px 3px;
+}
+
+/* None highlight */
+table.whitePaging {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	color: #606060;
+	background: #FFFFFF;
+	/* border: 5px solid #ffffff; */
+}
+
+table.whitePaging thead tr th {
+	padding: 0.3em;
+	/* background-color: #e3e3e3; */
+	/* color: #606060; */
+	color: #9ba0a4;
+	text-align: left;
+	font-weight: normal;
+}
+
+table.whitePaging thead tr th.c {
+	text-align: center;
+}
+
+table.whitePaging thead.groupBody tr td div {
+	padding: 0.3em;
+	background-color: #f0f0f0;
+	font-weight: bold;
+	color: #606060;
+	text-align: left;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+table.whitePaging thead.groupBody tr td div.current {
+	background-color: #b5bdc4;
+}
+
+table.whitePaging thead tr th[data-sort] {
+	cursor: pointer;
+}
+
+/* table.whitePaging thead tr th:first-child {
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+table.whitePaging thead tr th:last-child {
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 5px 5px 0px;
+} */
+
+table.whitePaging tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+table.whitePaging tbody tr:nth-child(odd):hover {
+	background-color: #dfebf9;
+}
+
+table.whitePaging tbody tr:nth-child(even) {
+	background-color: #ffffff;
+}
+
+table.whitePaging tbody tr:nth-child(even):hover {
+	background-color: #dfebf9;
+}
+
+table.whitePaging tbody tr td {
+	vertical-align: middle;
+	padding: 0.2em;
+}
+
+table.whitePaging tbody tr td.sboder {
+	border: 1px solid #eeeeee;
+}
+
+table.whitePaging tbody tr td.sboder.pd5 {
+	padding: 5px;
+}
+
+table.whitePaging tbody tr td.sboder.pd10 {
+	padding: 10px;
+}
+
+table.whitePaging tbody tr td.tpointer {
+	cursor: pointer;
+}
+
+/*** table's tfoot section ***/
+table.whitePaging tfoot {
+	color: #808080;
+}
+
+table.whitePaging tfoot span.tleft {
+	display: inline-block;
+	width: 49.75%;
+	text-align: left;
+}
+
+table.whitePaging tfoot span.tright {
+	display: inline-block;
+	width: 49.75%;
+	text-align: right;
+}
+
+table.whitePaging td.no-result {
+	font-style: italic;
+	color: #bababa;
+	padding-left: 5px;
+}
+
+/* None highlight & hover */
+table.nonePaging {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	color: #606060;
+	background: #FFFFFF;
+}
+
+table.nonePaging thead tr th {
+	padding: 0.3em;
+	color: #9ba0a4;
+	text-align: left;
+	font-weight: normal;
+}
+
+table.nonePaging thead tr th.c {
+	text-align: center;
+}
+
+table.nonePaging thead.groupBody tr td div {
+	padding: 0.3em;
+	background-color: #f0f0f0;
+	font-weight: bold;
+	color: #606060;
+	text-align: left;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+table.nonePaging thead.groupBody tr td div.current {
+	background-color: #b5bdc4;
+}
+
+table.nonePaging thead tr th[data-sort] {
+	cursor: pointer;
+}
+
+table.nonePaging tbody tr td {
+	vertical-align: middle;
+	padding: 0.2em;
+}

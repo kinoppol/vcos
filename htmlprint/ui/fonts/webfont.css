@@ -1,0 +1,112 @@
+@font-face {
+	  font-family: 'pridi';
+	  font-style: normal;
+	  font-weight: 300;
+	  src: local('Pridi Light'), local('Pridi-Light'), url('pridi.woff2') format('woff2');
+	  unicode-range: U+0E01-0E5B, U+200B-200D, U+25CC;
+}
+
+@font-face {
+	  font-family: 'pridien';
+	  font-style: normal;
+	  font-weight: 300;
+	  src: local('Pridi Light'), local('Pridi-Light'), url('pridi-latin.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('thsarabunnew-webfont.eot');
+    src: url('thsarabunnew-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thsarabunnew-webfont.woff') format('woff'),
+         url('thsarabunnew-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('thsarabunnew_bolditalic-webfont.eot');
+    src: url('thsarabunnew_bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thsarabunnew_bolditalic-webfont.woff') format('woff'),
+         url('thsarabunnew_bolditalic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('thsarabunnew_italic-webfont.eot');
+    src: url('thsarabunnew_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thsarabunnew_italic-webfont.woff') format('woff'),
+         url('thsarabunnew_italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('thsarabunnew_bold-webfont.eot');
+    src: url('thsarabunnew_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thsarabunnew_bold-webfont.woff') format('woff'),
+         url('thsarabunnew_bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* psk ตัวปกติ */
+@font-face {
+	font-family: 'THSarabunPSK';
+	src: url('sarabun/THSarabun.eot');
+	src: url('sarabun/THSarabun.eot?#iefix') format('embedded-opentype'),
+	url('sarabun/THSarabun.woff2') format('woff2'),
+	url('sarabun/THSarabun.woff') format('woff'),
+	url('sarabun/THSarabun.ttf') format('truetype'),
+	url('sarabun/THSarabun.svg#THSarabunPSKregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* psk ตัวหนา */
+@font-face {
+	font-family: 'THSarabunPSK';
+	src: url('sarabun/THSarabunBold.eot');
+	src: url('sarabun/THSarabunBold.eot?#iefix') format('embedded-opentype'),
+	url('sarabun/THSarabunBold.woff2') format('woff2'),
+	url('sarabun/THSarabunBold.woff') format('woff'),
+	url('sarabun/THSarabunBold.ttf') format('truetype'),
+	url('sarabun/THSarabunBold.svg#THSarabunPSKbold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* psk เอียง ตัวหนา */
+@font-face {
+	font-family: 'THSarabunPSK';
+	src: url('sarabun/THSarabunBoldItalic.eot');
+	src: url('sarabun/THSarabunBoldItalic.eot?#iefix') format('embedded-opentype'),
+	url('sarabun/THSarabunBoldItalic.woff2') format('woff2'),
+	url('sarabun/THSarabunBoldItalic.woff') format('woff'),
+	url('sarabun/THSarabunBoldItalic.ttf') format('truetype'),
+	url('sarabun/THSarabunBoldItalic.svg#THSarabunPSKbold') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* psk เอียง ตัวหนา */
+@font-face {
+	font-family: 'THSarabunPSK';
+	src: url('sarabun/THSarabunItalic.eot');
+	src: url('sarabun/THSarabunItalic.eot?#iefix') format('embedded-opentype'),
+	url('sarabun/THSarabunItalic.woff2') format('woff2'),
+	url('sarabun/THSarabunItalic.woff') format('woff'),
+	url('sarabun/THSarabunItalic.ttf') format('truetype'),
+	url('sarabun/THSarabunItalic.svg#THSarabunPSKbold') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
