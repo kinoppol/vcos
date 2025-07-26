@@ -53,7 +53,7 @@ class dummy_model
         $this->insert_id = $this->db->insert_id;
         return $result;
     }
-
+    
     function error(){
         $error = $this->error;
         $this->error = null;
