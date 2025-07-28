@@ -125,7 +125,7 @@ $user_pic=mb_substr($_SESSION['user']['picture'],0,4)=='http'?$_SESSION['user'][
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold ms-2"><img src="./images/rvc_logo.png" width="60" alt=""> <?php 
+              <span class="app-brand-text demo menu-text fw-bold ms-2"><img src="./images/papers-512.png" width="60" alt=""> <?php 
               print $system['systemSubName']; 
               ?></span>
             </a>
