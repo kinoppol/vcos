@@ -61,7 +61,9 @@
 
                       <tr>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                          <strong><?= $user_type_data['type_name'] ?></strong>
+                          <strong><?php
+                           print $user_type_data['type_name'].' ('.$user_type_data['type_name_thai'].')';
+                            ?></strong>
                         </td>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
                           <strong><?php

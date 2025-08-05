@@ -61,6 +61,18 @@ helper('view/alert');
                             </div>
                         </div>
                     </div>
+                    <div class="mb-3 col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="exampleusertype"
+                                aria-describedby="floatingInputHelp" name="type_name_thai"
+                                value="<?= $user_type['type_name_thai'] ?>"
+                                required />
+                            <label for="floatingInput">ชื่อประเภทผู้ใช้งาน (ภาษาไทย)</label>
+                            <div id="floatingInputHelp" class="form-text">
+
+                            </div>
+                        </div>
+                    </div>
                     <input type="hidden" name="id"
                         value="<?= $user_type['id'] ?>">
                     <h5>เมนูที่อนุญาต</h5>

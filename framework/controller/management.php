@@ -201,14 +201,11 @@ class management{
         $userTypeModel=model('user_type_model');
         $user_type_data = $userTypeModel->get($param['id']);
         
-        if($_POST['type_name'] != $user_type_data['type_name']){
             $is_updated = true;
             $user_type_data['type_name'] = $_POST['type_name'];
-        }
-        if($_POST['active_module'] != $user_type_data['active_module']){
-            $is_updated = true;
+            $user_type_data['type_name_thai'] = $_POST['type_name_thai'];
             $user_type_data['active_module']=$_POST['active_module'];
-        }
+        
         for($i=0;$i<count($user_type_data['active_menu']);$i++)
         {
             $menu = ($_POST['menu-'.$i] ?? '');

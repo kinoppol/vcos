@@ -1,6 +1,14 @@
 <?php
 
 function portait_print($data=array()){
+	return html_print($data,210,290,'A4');
+}
+
+function landscape_print($data=array()){
+	return html_print($data,290,210,'A4 landscape');
+}
+
+function html_print($data=array(),$w,$h,$size='A4'){
     $ret='
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" slang="en"> <![endif]-->
@@ -68,9 +76,9 @@ function portait_print($data=array()){
     }
     .page {
     	display: block;
-	    width: 296mm;
-	    height: 210mm;
-	    max-height: 210mm;
+	    width: '.$w.'mm;
+	    height: '.$h.'mm;
+	    max-height: '.$h.'mm;
 	    padding: .5cm .5cm .5cm .5cm;
 	    margin: .5cm auto;
 	    border: 1px #D3D3D3 solid;
@@ -109,7 +117,7 @@ function portait_print($data=array()){
 	}
 
 	@page {
-        size: A4;
+        size: '.$size.';
         margin: 0;
     }
     @media print {
@@ -129,28 +137,28 @@ function portait_print($data=array()){
     <style>
     .containerasd {
     display: grid;
-    grid-template-columns: 50pt 150pt 15pt 15pt 15pt; /* กำหนดขนาดของแต่ละคอลัมน์ */
+    grid-template-columns: 50pt 150pt 15pt 15pt 15pt;
     width: 100%;
     height: 167mm;
-    border: 1px solid #000; /* เส้นขอบรอบนอก */
+    border: 1px solid #000;
 }
 
 .column {
-    border-left: 1px solid #000; /* เส้นขอบซ้ายของแต่ละคอลัมน์ */
+    border-left: 1px solid #000;
     height: 100%;
     display: flex;
-    justify-content: center; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
-    align-items: center; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; 
+    align-items: center; 
     font-family: \'THSarabunPSK\';
     font-size: 14pt;
 }
 
 .column:first-child {
-    border-left: none; /* ไม่ต้องมีเส้นขอบซ้ายของคอลัมน์แรก */
+    border-left: none; 
 }
 
 .column:last-child {
-    border-right: none; /* ไม่ต้องมีเส้นขอบขวาของคอลัมน์สุดท้าย */
+    border-right: none; 
 }
 
 p {
@@ -187,15 +195,12 @@ p {
 <body>
 <div id="container">
 	 <div class="hidden-print" style="width: 210mm;text-align: center;padding-bottom: 10px;margin: 5px auto;">
-		<button type="button" class="btn btn-primary hidden-print" onclick="window.print();" style="margin-top: 5px;"><span class="glyphicon glyphicon-print"></span> &nbsp;พิมพ์</button>
+		<button type="button" class="btn btn-danger hidden-print" onclick="window.print();" style="margin-top: 5px;"><span class="glyphicon glyphicon-print"></span> &nbsp;พิมพ์</button>
 	 </div>
     
    
 	 <!-- Page 1 -->
-     <div class="page">
-     <p>พิมพ์ตารางสอนใส่ระบบ
-     </p>
-	'.$data['content'].'
+     <div class="page">'.$data['content'].'
     </div>
   		 
 </div>
