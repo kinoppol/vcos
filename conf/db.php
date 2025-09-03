@@ -5,7 +5,7 @@
 // $db_database='vcos';
 require_once("../vcos_setup.php");
 
-$db = new mysqli($db_host,$db_user,$db_pass,$db_database);
+$db = new mysqli($db_host,$db_user,$db_pass,$db_database,$db_port);
 
 if($db->connect_errno){
     //print "ไม่สามารถเชื่อมต่อฐานข้อมูลได้`";
