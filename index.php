@@ -15,6 +15,8 @@ $controller_guest_allowed=array(
     'qa'
 );
 
+define('DEFAULT_CONTROLLER','login');
+
 $controller=null;
 $function=null;
 $param=array();
@@ -47,7 +49,7 @@ if(!empty($_GET['p'])){
     }
 }
     if(empty($controller)){
-        $controller='login';
+        $controller=DEFAULT_CONTROLLER;
     }
     
     if(empty($_SESSION['user'])&&!is_numeric(array_search($controller,$controller_guest_allowed))){

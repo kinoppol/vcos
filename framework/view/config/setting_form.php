@@ -26,6 +26,13 @@ $form['inputs']=array(
         'label'=>'ชื่อย่อระบบ',
         'value'=>$systemSubName,
     ),array(
+        'type'=>'text',
+        'required'=>false,
+        'placeholder'=>'MS...',
+        'name'=>'menuTitle',
+        'label'=>'ข้อความเหนือเมนู',
+        'value'=>$menuTitle,
+    ),array(
         'type'=>'submit',
         'value'=>'บันทึก',
     )

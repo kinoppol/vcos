@@ -134,7 +134,11 @@ $user_pic=mb_substr($_SESSION['user']['picture'],0,4)=='http'?$_SESSION['user'][
               <i class="bx bx-chevron-left bx-sm align-middle"></i>
             </a>
           </div>
-
+          <div class="app-brand">
+            <span class="ms-3"><?php
+              print $system['menuTitle']; 
+            ?></span>
+          </div>
           <div class="menu-inner-shadow"></div>
           <ul class="menu-inner py-1">
   <?php
