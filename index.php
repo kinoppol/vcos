@@ -1,4 +1,5 @@
 <?php
+include_once('version.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -14,6 +15,8 @@ $controller_guest_allowed=array(
     'showcourses',
     'qa'
 );
+
+define('DEFAULT_CONTROLLER','login');
 
 $controller=null;
 $function=null;
@@ -47,7 +50,7 @@ if(!empty($_GET['p'])){
     }
 }
     if(empty($controller)){
-        $controller='login';
+        $controller=DEFAULT_CONTROLLER;
     }
     
     if(empty($_SESSION['user'])&&!is_numeric(array_search($controller,$controller_guest_allowed))){

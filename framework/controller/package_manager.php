@@ -2,7 +2,13 @@
 class package_manager{
     function installed_modules(){
 
-        $content=view('package_manager/list_package');
+        $modulePath = BASE_PATH.'modules/';
+        $contents = scandir($modulePath);
+        $modules = array_filter($contents, function($item) use ($modulePath) {
+            return is_dir($modulePath . '/' . $item) && $item !== '.' && $item !== '..';
+        });
+        $data=array('modules'=>$modules);
+        $content=view('package_manager/list_package',$data);
         return view('_template/main',array('content'=>$content,'title'=>'จัดการแพ็คเกจ'));
     }
     function online_install(){      

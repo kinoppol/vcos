@@ -1,12 +1,12 @@
 <?php
 class main{
     function index(){
-        
-        // $content='ยินดีต้อนรับเข้าสู่ระบบประเมินออนไลน์ โปรดเลือกตัวชี้วัดเพื่อดำเนินการ';
-        // helper('sneat/menu');
-        // $menu=view('_menu/admin_cvm').view('_menu/admin_school').view('_menu/user_menu');
-        // return view('_template/main',array('content'=>$content,'title'=>'หน้าหลัก','menu'=>$menu));
-        return redirect(module_url('ocd','ocd','timetables'));
+        global $system;
+        if(empty($system['home_page'])){
+            return redirect(site_url('package_manager/installed_modules'));
+        }else{
+            return redirect($system['home_page']);
+        }
     }
     function dashboard(){
         $store=model('store');
