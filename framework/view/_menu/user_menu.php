@@ -1,7 +1,6 @@
 <?php
-
-$menu['เมนูผู้ใช้']=array(
-    'user'=>array(
+if($system['userSelfUpdate']){
+$user_menu['user']=array(
         'label'=>'ตั้งค่าส่วนตัว',
         'bullet'=>'tf-icons bx bx-slider',
         'url'=>site_url('user'),
@@ -15,12 +14,13 @@ $menu['เมนูผู้ใช้']=array(
                 'url'=>site_url('user/change_password_form'),
             ),
         ),
-    ),
-    'logout'=>array(
+    );
+}
+$user_menu['logout']=array(
         'label'=>'ออกจากระบบ',
         'bullet'=>'tf-icons bx bx-exit',
         'url'=>'javascript:if(confirm(\'ยืนยันออกจากระบบ\'))window.location.href=\''.site_url('logout').'\'; ',
-    ),
 );
+$menu['เมนูผู้ใช้']=$user_menu;
 
 print gen_menu($menu);

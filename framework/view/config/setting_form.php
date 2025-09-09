@@ -33,6 +33,20 @@ $form['inputs']=array(
         'label'=>'ข้อความเหนือเมนู',
         'value'=>$menuTitle,
     ),array(
+        'type'=>'text',
+        'required'=>false,
+        'placeholder'=>'MS...',
+        'name'=>'homePage',
+        'label'=>'หน้าหลัก',
+        'value'=>$homePage,
+    ),array(
+        'type'=>'switch',
+        'def'=>($userSelfUpdate==true?true:false),
+        'placeholder'=>'MS...',
+        'name'=>'userSelfUpdate',
+        'label'=>'อนุญาตให้ผู้ใช้แก้ไขข้อมูลส่วนตัว',
+        'value'=>true,
+    ),array(
         'type'=>'submit',
         'value'=>'บันทึก',
     )

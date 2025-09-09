@@ -1,9 +1,12 @@
 <?php
 class login{
     function index(){
-    
-        $content=view('login/form',array('action_url'=>site_url('login/check')));
-        return view('_template/authen',array('content'=>$content,'title'=>'ลงชื่อเข้าใช้'));
+        if(isset($_SESSION['user'])){
+            return redirect(site_url('main'));
+        }else{
+            $content=view('login/form',array('action_url'=>site_url('login/check')));
+            return view('_template/authen',array('content'=>$content,'title'=>'ลงชื่อเข้าใช้'));
+        }
     }
 
     function check(){

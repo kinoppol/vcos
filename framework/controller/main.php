@@ -2,10 +2,10 @@
 class main{
     function index(){
         global $system;
-        if(empty($system['home_page'])){
+        if(empty($system['homePage'])){
             return redirect(site_url('package_manager/installed_modules'));
         }else{
-            return redirect($system['home_page']);
+            return redirect($system['homePage']);
         }
     }
     function dashboard(){

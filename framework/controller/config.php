@@ -22,6 +22,7 @@ class config{
     function save_config(){
         $systemModel = model('system_model');
         //print_r($_POST);
+        if(empty($_POST['userSelfUpdate']))$_POST['userSelfUpdate']='0';
         foreach($_POST as $id=>$value){
             //print 'UC';
             $systemModel->update_config_if_empty_create($id,$value);

@@ -21,6 +21,7 @@ function form_gen_input($data=array()){
             case 'text' : return form_gen_input_text($data); break;
             case 'submit' : return form_gen_input_submit($data); break;
             case 'file' : return form_gen_input_file($data); break;
+            case 'switch' : return form_gen_input_switch($data); break;
         }
    }
 
@@ -66,6 +67,22 @@ function form_gen_input_submit($data=array()){
             <div class="d-grid gap-2 col-lg-6 col-md-12 mx-auto mt-3">
               <button class="btn btn-primary btn-lg" type="submit">'.$data['value'].'</button>
             </div>
+          </div>';
+        return $ret;
+}
+
+function form_gen_input_switch($data=array()){
+    $checked='';
+    if($data['def']){
+        $checked=' checked';
+    }
+    $ret='<div class="row">
+              <div class="mb-3 col-12">
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="'.$data['name'].'" value="'.$data['value'].'" '.$checked.'/>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">'.$data['label'].'</label>
+                </div>
+              </div>
           </div>';
         return $ret;
 }
