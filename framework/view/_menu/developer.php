@@ -25,15 +25,25 @@ $menu['จัดการระบบ']=array(
         'url'=>site_url('config'),
         'bullet'=>'tf-icons bx bx-cog',
         'item'=>array(
-            'store'=>array(
+            'application'=>array(
                 'label'=>'ข้อมูลระบบ',
                 'bullet'=>'fa fa-shopping-cart',
                 'url'=>site_url('config/application'),
             ),
-            'time'=>array(
+            'maintenance'=>array(
                 'label'=>'การซ่อมบำรุง',
                 'bullet'=>'fa fa-clock-o',
                 'url'=>site_url('config/maintenance'),
+            ),
+            'update'=>array(
+                'label'=>'อัพเดต',
+                'bullet'=>'fa fa-clock-o',
+                'url'=>site_url('config/update'),
+            ),
+            'release'=>array(
+                'label'=>'สร้างข้อมูลอัพเดต',
+                'bullet'=>'fa fa-clock-o',
+                'url'=>site_url('config/release'),
             ),
         ),
     )
