@@ -1,6 +1,7 @@
 <?php
 set_time_limit(0);
-require_once "zip.php";
+copy('zip.php','temp_zip.php');
+require_once "temp_zip.php";
 define('UPDATER_PATH', str_replace('\\','/',dirname(__FILE__)).'/');
 //print UPDATER_PATH;
 //exit();
@@ -47,5 +48,5 @@ if($zip->open($zip_file) != "true")
 
 $zip->extractSubdirTo($extractPath,$in_zip_dirname);
 $zip->close();
-
+unlink('temp_zip.php');
 print '<a href="./index.php">กลับหน้าหลัก</a>';
