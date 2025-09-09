@@ -7,6 +7,7 @@ class main{
         // $menu=view('_menu/admin_cvm').view('_menu/admin_school').view('_menu/user_menu');
         // return view('_template/main',array('content'=>$content,'title'=>'หน้าหลัก','menu'=>$menu));
         return redirect(module_url('ocd','ocd','timetables'));
+        //return redirect(site_url('package_manager/installed_modules'));
     }
     function dashboard(){
         $store=model('store');

@@ -9,9 +9,9 @@ if (!file_exists($update_dir)) {
     mkdir($update_dir, 0777, true);
 }
 
-$url = "https://github.com/kinoppol/oqas/archive/refs/heads/main.zip"; #<--
+$url = "https://github.com/kinoppol/vcos/archive/refs/heads/main.zip"; #<--
 $zip_file = $update_dir."temp.zip"; #<--
-$in_zip_dirname='oqas-main/'; #<--
+$in_zip_dirname='vcos-main/'; #<--
 
 $zip_resource = fopen($zip_file, "w");
 
