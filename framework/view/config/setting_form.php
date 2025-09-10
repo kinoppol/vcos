@@ -29,6 +29,13 @@ $form['inputs']=array(
         'type'=>'text',
         'required'=>false,
         'placeholder'=>'MS...',
+        'name'=>'systemLogo',
+        'label'=>'สัญลักษณ์',
+        'value'=>$systemLogo,
+    ),array(
+        'type'=>'text',
+        'required'=>false,
+        'placeholder'=>'MS...',
         'name'=>'menuTitle',
         'label'=>'ข้อความเหนือเมนู',
         'value'=>$menuTitle,
