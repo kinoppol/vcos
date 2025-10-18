@@ -23,14 +23,14 @@ class system_model{
     }
 
     function update_config($key,$value){
-      $sql='update system_config set value='.pq($value).' where id='.pq($key);
+      $sql='update system_config set value='.pq($value,true).' where id='.pq($key);
       //print $sql;
       $result=$this->db->query($sql);
       return $result;
     }
 
     function create_config($key,$value){
-      $sql='insert system_config set id='.pq($key).',value='.pq($value);
+      $sql='insert system_config set id='.pq($key).',value='.pq($value,true);
       //print $sql;
       $result=$this->db->query($sql);
       return $result;

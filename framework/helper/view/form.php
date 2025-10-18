@@ -17,6 +17,13 @@ function form_gen_option($selection, $default_selection){
 }
 
 function form_gen_input($data=array()){
+    $data['tail']='';
+    $data['req']='';
+    if($data['required']){
+    $data['tail']=' *';
+    $data['req']=' required';
+
+    }
         switch($data['type']){
             case 'text' : return form_gen_input_text($data); break;
             case 'submit' : return form_gen_input_submit($data); break;
@@ -31,8 +38,8 @@ function form_gen_input_text($data=array()){
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="floatingInput" placeholder="'.$data['placeholder'].'"
                                     name="'.$data['name'].'"
-                                    value="'.$data['value'].'" />
-                                <label for="floatingInput">'.$data['label'].'</label>
+                                    value="'.$data['value'].'"'.$data['req'].'/>
+                                <label for="floatingInput">'.$data['label'].$data['tail'].'</label>
                                 <div id="floatingInputHelp" class="form-text">
 
                                 </div>
@@ -47,10 +54,10 @@ function form_gen_input_file($data=array()){
                            <div class="mb-3 col-12">
                                <div class="input-group">
                                
-            <label class="input-group-text" for="inputGroupFile01">'.$data['label'].'</label>
+            <label class="input-group-text" for="inputGroupFile01">'.$data['label'].$data['tail'].'</label>
                                    <input type="file" class="form-control" id="inputGroupFile01" placeholder="'.$data['placeholder'].'"
                                        name="'.$data['name'].'"
-                                       value="'.$data['value'].'" />
+                                       value="'.$data['value'].'"'.$data['req'].'/>
                                    <div id="floatingInputHelp" class="form-text">
    
                                    </div>

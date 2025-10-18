@@ -47,8 +47,15 @@ $form['inputs']=array(
         'label'=>'หน้าหลัก',
         'value'=>$homePage,
     ),array(
+        'type'=>'text',
+        'required'=>false,
+        'placeholder'=>'https://rms...',
+        'name'=>'rms_url',
+        'label'=>'ลิงก์ระบบ RMS',
+        'value'=>$rms_url,
+    ),array(
         'type'=>'switch',
-        'def'=>($userSelfUpdate==true?true:false),
+        'def'=>($homePage==true?true:false),
         'placeholder'=>'MS...',
         'name'=>'userSelfUpdate',
         'label'=>'อนุญาตให้ผู้ใช้แก้ไขข้อมูลส่วนตัว',
